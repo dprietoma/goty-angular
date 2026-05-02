@@ -1,0 +1,107 @@
+.gaming-navbar {
+  padding: 14px 24px;
+  background:
+    radial-gradient(circle at top left, rgba(72, 202, 228, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(190, 21, 88, 0.2), transparent 30%),
+    linear-gradient(135deg, #111111, #1c1c1c 55%, #252525);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 8px rgba(72, 202, 228, 0.45))
+    drop-shadow(0 0 14px rgba(190, 21, 88, 0.28));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.brand-wrapper:hover .brand-logo {
+  transform: scale(1.08) rotate(-4deg);
+  filter:
+    drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))
+    drop-shadow(0 0 18px rgba(72, 202, 228, 0.5));
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.brand-subtitle {
+  margin-top: 4px;
+  color: #48cae4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.gaming-nav-list {
+  gap: 10px;
+}
+
+.gaming-link {
+  position: relative;
+  padding: 10px 16px !important;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gaming-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  background: rgba(72, 202, 228, 0.12);
+  box-shadow: 0 8px 20px rgba(72, 202, 228, 0.16);
+}
+
+.nav-item.active .gaming-link {
+  color: #111111 !important;
+  background: linear-gradient(135deg, #48cae4, #ffd700);
+  box-shadow:
+    0 0 16px rgba(72, 202, 228, 0.35),
+    0 0 24px rgba(255, 215, 0, 0.22);
+}
+
+.vote-link {
+  border: 1px solid rgba(255, 140, 66, 0.35);
+}
+
+.vote-link:hover {
+  background: rgba(255, 140, 66, 0.16);
+  box-shadow: 0 8px 22px rgba(255, 140, 66, 0.18);
+}
+
+.gaming-toggler {
+  border: 1px solid rgba(72, 202, 228, 0.35);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.gaming-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(72, 202, 228, 0.22);
+}

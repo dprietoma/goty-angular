@@ -1,0 +1,62 @@
+<section class="goty-page">
+  <div class="goty-title">
+    <span class="title-badge">🏆 GOTY Awards</span>
+    <h1>Game of the Year</h1>
+    <p>Agrega nuevos candidatos y vota por tu favorito</p>
+  </div>
+
+  <section class="game-form-section">
+    <div class="form-header">
+      <span class="badge">➕ Nuevo juego</span>
+      <h3>Agregar candidato GOTY</h3>
+      <p>Registra un videojuego para que pueda entrar a votación</p>
+    </div>
+
+    <form [formGroup]="formJuego" (ngSubmit)="guardarJuego()" class="game-form">
+      <div class="form-grid">
+        <div class="form-field">
+          <label>Nombre del juego</label>
+          <input
+            type="text"
+            formControlName="nombre"
+            placeholder="Ej: Elden Ring"
+          />
+
+          <small *ngIf="campoInvalido('nombre')">
+            El nombre es obligatorio y debe tener mínimo 2 caracteres
+          </small>
+        </div>
+
+        <div class="form-field">
+          <label>URL de la imagen</label>
+          <input
+            type="text"
+            formControlName="url"
+            placeholder="https://imagen-del-juego.jpg"
+          />
+
+          <small *ngIf="campoInvalido('url')">
+            La URL de la imagen es obligatoria
+          </small>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>Descripción</label>
+        <textarea
+          rows="3"
+          formControlName="descripcion"
+          placeholder="Describe brevemente el videojuego">
+        </textarea>
+
+        <small *ngIf="campoInvalido('descripcion')">
+          La descripción es obligatoria y debe tener mínimo 5 caracteres
+        </small>
+      </div>
+
+      <button class="save-game-button" type="submit" [disabled]="guardando">
+        {{ guardando ? 'Guardando...' : '🚀 Guardar juego' }}
+      </button>
+    </form>
+  </section>
+</section>

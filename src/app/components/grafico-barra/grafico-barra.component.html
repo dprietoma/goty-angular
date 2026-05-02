@@ -1,0 +1,66 @@
+<div class="gaming-chart-card">
+  <div class="gaming-layout">
+    <div class="gaming-chart-content">
+      <div class="chart-header">
+        <span class="badge">🎮 Gaming Stats</span>
+        <h3>Top videojuegos favoritos</h3>
+        <p>Puntuación visual de 4 títulos populares</p>
+      </div>
+
+      <div class="chart-container">
+        <canvas
+          baseChart
+          [data]="barChartData"
+          [options]="barChartOptions"
+          [type]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="gaming-image-content">
+      <img
+        src="../../../assets/image/icon.png"
+        alt="Personaje gamer"
+        class="gaming-image"
+      />
+    </div>
+  </div>
+</div>
+
+<section class="games-section">
+  <div class="games-header">
+    <span class="badge">🏆 Nominados</span>
+    <h3>Elige tu juego favorito</h3>
+    <p>Vota por el título que merece ser Game of the Year</p>
+  </div>
+
+  <div class="games-grid">
+    <div class="game-card" *ngFor="let juego of juegos$ | async">
+      <div class="game-image-wrapper">
+        <img
+          [src]="juego.url"
+          [alt]="juego.nombre"
+          class="game-image"
+        />
+      </div>
+
+      <div class="game-info">
+        <h4>{{ juego.nombre }}</h4>
+
+        <p class="game-description">
+          {{ juego.descripcion }}
+        </p>
+
+        <div class="game-votes">
+          <span>{{ juego.votos }}</span>
+          <small>votos</small>
+        </div>
+
+        <button class="vote-button" type="button" (click)="votarJuego(juego)">
+          🕹️ Votar
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
